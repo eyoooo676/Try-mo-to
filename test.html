@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Miss mo ba sya?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fef6f9;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .btn-container {
+      margin-top: 20px;
+    }
+
+    button {
+      margin: 10px;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #ffb6c1;
+      color: #fff;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background-color: #ff82a9;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    iframe {
+      margin-top: 30px;
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      border: none;
+    }
+
+    .tiktok-box {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- First Question -->
+  <div id="q1">
+    <h1>Miss mo ba sya?</h1>
+    <div class="btn-container">
+      <button onclick="goToQ2()">Oo</button>
+      <button onclick="showTikTok()">Hindi</button>
+    </div>
+  </div>
+
+  <!-- Second Question -->
+  <div id="q2" class="hidden">
+    <h1>Miss ka ba nya?</h1>
+    <div class="btn-container">
+      <button onclick="showTikTok()">Oo</button>
+      <button onclick="showYoutube()">Hindi</button>
+    </div>
+  </div>
+
+  <!-- YouTube -->
+  <div id="youtube" class="hidden">
+    <iframe src="https://www.youtube.com/embed/mjq-MNtak_8?si=YgpnfP0xMtvo8q0Q" allowfullscreen></iframe>
+  </div>
+
+  <!-- TikTok -->
+  <div id="tiktok" class="tiktok-box hidden">
+    <blockquote class="tiktok-embed"
+      cite="https://www.tiktok.com/@ms_marivic1308/video/7514178061231869206"
+      data-video-id="7514178061231869206"
+      style="max-width: 605px; min-width: 325px;">
+      <section>
+        <a target="_blank" title="@ms_marivic1308"
+          href="https://www.tiktok.com/@ms_marivic1308?refer=embed">@ms_marivic1308</a> Gulat ka? Viral at trending pa rin yang pa-dila mo 😂😂
+      </section>
+    </blockquote>
+    <script async src="https://www.tiktok.com/embed.js"></script>
+  </div>
+
+  <script>
+    function goToQ2() {
+      document.getElementById('q1').classList.add('hidden');
+      document.getElementById('q2').classList.remove('hidden');
+      document.title = "Miss ka ba nya?";
+    }
+
+    function showTikTok() {
+      document.getElementById('q1').classList.add('hidden');
+      document.getElementById('q2').classList.add('hidden');
+      document.getElementById('youtube').classList.add('hidden');
+      document.getElementById('tiktok').classList.remove('hidden');
+    }
+
+    function showYoutube() {
+      document.getElementById('q1').classList.add('hidden');
+      document.getElementById('q2').classList.add('hidden');
+      document.getElementById('tiktok').classList.add('hidden');
+      document.getElementById('youtube').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
